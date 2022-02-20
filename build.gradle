@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'application'
+    id 'io.quarkus' version '2.7.1.Final'
 }
 
 group 'org.example'
@@ -12,14 +13,19 @@ repositories {
 
 ext{
     helidonversion = '2.4.2'
+    quarkusversion = '2.7.1.Final'
 }
 
 dependencies {
 
     // import Helidon dependency management
-    implementation platform("io.helidon:helidon-dependencies:${project.helidonversion}")
+    //implementation platform("io.helidon:helidon-dependencies:${project.helidonversion}")
     //servidor
-    implementation 'io.helidon.microprofile.server:helidon-microprofile-server'
+    //implementation 'io.helidon.microprofile.server:helidon-microprofile-server'
+
+    // import Quarkus dependency management
+    implementation enforcedPlatform("io.quarkus.platform:quarkus-bom:${project.quarkusversion}")
+    implementation group: 'io.quarkus', name: 'quarkus-resteasy'
 
 }
 

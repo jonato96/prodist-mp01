@@ -9,6 +9,7 @@ import javax.ws.rs.Path;
 public class HolaRest {
     @GET
     public String hola(){
-        return "Hola desde Helidon";
+        //return "Hola desde Helidon";
+        return "Hola desde Quarkus";
     }
 }
