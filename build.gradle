@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 group 'org.example'
@@ -9,6 +10,25 @@ repositories {
     mavenCentral()
 }
 
+ext{
+    helidonversion = '2.4.2'
+}
+
 dependencies {
 
+    // import Helidon dependency management
+    implementation platform("io.helidon:helidon-dependencies:${project.helidonversion}")
+    //servidor
+    implementation 'io.helidon.microprofile.server:helidon-microprofile-server'
+
+}
+
+application{
+    mainClassName = 'com.programacion.Main'
+}
+
+sourceSets {
+    main {
+        output.resourcesDir = file("${buildDir}/classes/java/main")
+    }
 }
