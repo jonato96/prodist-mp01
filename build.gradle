@@ -26,6 +26,8 @@ dependencies {
     // import Quarkus dependency management
     implementation enforcedPlatform("io.quarkus.platform:quarkus-bom:${project.quarkusversion}")
     implementation group: 'io.quarkus', name: 'quarkus-resteasy'
+    // https://mvnrepository.com/artifact/io.quarkus/quarkus-consul-config
+    implementation group: 'io.quarkus', name: 'quarkus-consul-config'
 
 }
 
